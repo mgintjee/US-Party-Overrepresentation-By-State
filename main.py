@@ -118,11 +118,8 @@ class StateInfo:
     def DebugPrintPercents(self):
         print("State:",self.State,"| D: {0:2}".format(self.PercentDem),"R: {0:2}".format(self.PercentRep))
         
-def GetRemainder(Val):
-    return Val - math.floor(Val)
 
 def main():
-    
     with open('DataByState.json') as f:
         data = json.load(f)
     
@@ -140,6 +137,7 @@ def main():
     print(Header)
     
     OverCount =[0,0,0]
+    StateCount =[[] for i in range(3)]
     for State in data.keys():
         stateInfo = StateInfo(State, data[State])
         if(Debug):
@@ -149,9 +147,13 @@ def main():
         print(FormattedInformation[0])
         Count = FormattedInformation[1]
         for i in range(3):
-            OverCount[i] += Count[i]
-    print("OverRepCounts\nDem\t{0:2}\nRep\t{1:2}\n3rd\t{2:2}".format(OverCount[0], OverCount[1], OverCount[2]))
-
+            OverCount[i] += len(Count[i])
+            for state in Count[i]:
+                StateCount[i].append(state)
+    BothStateCount = ListIntersection(StateCount[0], StateCount[1])
+    print("OverRepCounts\nDem\t{0:2}\t{1:100}\nRep\t{2:2}\t{3}\nBoth\t{4:2}\t{5}"
+          .format(OverCount[0], ", ".join(StateCount[0]), OverCount[1],
+                  ", ".join(StateCount[1]), len(BothStateCount), ", ".join(BothStateCount)))
         
 def FormatStateInfo(stateInfo):
     
@@ -173,22 +175,29 @@ def FormatStateInfo(stateInfo):
         overD = "\t"
         overR = "\t"
         over3 = "\t"
-        Count =[0,0,0]
+        Count =[[] for i in range(3)]
         
         if(stateInfo.SeatsDemA > stateInfo.SeatsDemX):
             overD += "Dem"
-            Count[0] = 1
+            Count[0].append(stateInfo.State)
             
         if(stateInfo.SeatsRepA > stateInfo.SeatsRepX):
             overR += "Rep"
-            Count[1] = 1
+            Count[1].append(stateInfo.State)
             
         if(Include3rd and stateInfo.Seats3rdA > stateInfo.Seats3rdX):
             over3 += "3rd"
-            Count[2] = 1
+            Count[2].append(stateInfo.State)
             
         StateInformation += "{0:3} {1:3} {2:3}".format(overD, overR, over3)
         return [StateInformation, Count]
     
+def ListIntersection(L1, L2):
+    L3 = [value for value in L1 if value in L2]
+    return L3
+
+def GetRemainder(Val):
+    return Val - math.floor(Val)
+
 if __name__ == "__main__":
     main()
