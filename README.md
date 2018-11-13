@@ -7,19 +7,30 @@ My friend was telling me how both sides were the same when it came to gerrymande
 2. Exclude 3rd party representation as part of the expected seats (More Realistic)
 
 ## Algorithm 1: 
-1. Divy up the remaining seats using the party percentage as ints
-2. If the remaining seats is at 0, we are done
-3. If the remaining seats is at 1, we increment the largest party percentage
-3. If the remaining seats is at 2, we increment the 2 largest party percentages
-4. Else, if the party percentage is greater than 50% we increment that party
-5. Repeat until step 2 is fulfilled
+1. Find the share of the remaining seats for each party
+	* Dem = Floor(Remaining Seats * PercentDem)
+	* Rep = Floor(Remaining Seats * PercentRep)
+	* 3rd = Floor(Remaining Seats * Percent3rd)
+2. If the above calculations are all equal to 0: (EG 1 seat)
+	1. If the remaining seats is at 1, we increment the largest party percentage's seat share
+	2. If the remaining seats is at 2, we increment the 2 largest party percentages' seat shares
+	3. Else, For each party, if the party percentage is greater than 50%, we increment that party's seat share
+3. Else:
+	1. Decrement remaining seats by all of the party seat shares
+	2. Repeat with the smaller remaining seats
+5. Repeat until remaining seats is 0
 
 ## Algorithm 2: 
-1. Divy up the remaining seats using the party percentage as ints
-2. If the remaining seats is at 0, we are done
-3. If the remaining seats is at 1, we increment the largest party percentage
-4. Else, if the party percentage is greater than 50% we increment that party
-5. Repeat until step 2 is fulfilled
+1. Find the share of the remaining seats for each party
+	* Dem = Floor(Remaining Seats * PercentDem)
+	* Rep = Floor(Remaining Seats * PercentRep)
+2. If the above calculations are all equal to 0: (EG 1 seat)
+	1. If the remaining seats is at 1, we increment the largest party percentage's seat share
+	3. Else, For each party, if the party percentage is greater than 50%, we increment that party's seat share
+3. Else:
+	1. Decrement remaining seats by all of the party seat shares
+	2. Repeat with the smaller remaining seats
+5. Repeat until remaining seats is 0
 
 ## Outcome 1:
 * Democrats   Overrepresented in **13 states**: CA, CT, IL, MD, MA, MN, NV, NH, NJ, NY, OR, RI, WA
