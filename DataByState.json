@@ -68,8 +68,8 @@
 		"PercentDem": 42,
 		"PercentRep": 39,
 		"SeatsSum": 27,
-		"SeatsDem": 16,
-		"SeatsRep": 11
+		"SeatsDem": 11,
+		"SeatsRep": 16
 	},
 	"GA":
 	{
@@ -115,9 +115,9 @@
 	{
 		"PercentDem": 42,
 		"PercentRep": 42,
-		"SeatsSum": 9,
-		"SeatsDem": 2,
-		"SeatsRep": 7
+		"SeatsSum": 4,
+		"SeatsDem": 1,
+		"SeatsRep": 3
 	},
 	"KS":
 	{
@@ -404,7 +404,7 @@
 		"PercentDem": 45,
 		"PercentRep": 38,
 		"SeatsSum": 435,
-		"SeatsDem": 238,
-		"SeatsRep": 191
+		"SeatsDem": 193,
+		"SeatsRep": 238
 	}
 }
