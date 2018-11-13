@@ -39,5 +39,6 @@ My friend was telling me how both sides were the same when it came to gerrymande
 
 * Source For Current Seats For States By Party:
   * https://en.wikipedia.org/wiki/List_of_current_members_of_the_United_States_House_of_Representatives
+  * Since Wikipedia is dynamic, I pulled the data on 11/12/2018 if there is an archive somewhere
 
 Note: The reason I included the dumb tabs ("\t") is so I could copy and paste it into the sheets with ease. Lazy on my part but w/e
