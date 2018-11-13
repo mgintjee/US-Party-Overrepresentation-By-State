@@ -7,13 +7,13 @@ My friend was telling me how both sides were the same when it came to gerrymande
 2) Exclude 3rd party representation (More Realistic)
 
 Outcome 1:
-Democrats Overrepresented in <b>13 states</b>: CA, CT, IL, MD, MA, MN, NV, NH, NJ, NY, OR, RI, WA
-Republicans Overrepresented: <b>30 states</b>: 
-Both Overrepresented in <b>2 states</b>: NJ, NY
-Found Here: https://docs.google.com/spreadsheets/d/1e9mlfr3_OIc8v5Oabc0wPBVADV7ZabuXLx_Us7ock8M/edit#gid=1130096001
+*Democrats Overrepresented in 13 states: CA, CT, IL, MD, MA, MN, NV, NH, NJ, NY, OR, RI, WA
+*Republicans Overrepresented: 30 states: 
+*Both Overrepresented in 2 states: NJ, NY
+*[Google Sheets](https://docs.google.com/spreadsheets/d/1e9mlfr3_OIc8v5Oabc0wPBVADV7ZabuXLx_Us7ock8M/edit#gid=1130096001)
 
 Outcome 2:
-Found Here: https://docs.google.com/spreadsheets/d/1e9mlfr3_OIc8v5Oabc0wPBVADV7ZabuXLx_Us7ock8M/edit#gid=0
+*[Google Sheets](https://docs.google.com/spreadsheets/d/1e9mlfr3_OIc8v5Oabc0wPBVADV7ZabuXLx_Us7ock8M/edit#gid=0)
 
 Source For Party Affiliation Percents:
 https://news.gallup.com/poll/226643/2017-party-affiliation-state.aspx
