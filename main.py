@@ -1,7 +1,8 @@
 # US Party Representation By State
 import json, math
 # Whether or not we are including 3rd party as a party to be represented
-Include3rd = True
+Include3rd = False
+Debug = False
 
 class StateInfo:
     def __init__(self, State, StateInformation):
@@ -110,6 +111,12 @@ class StateInfo:
             SeatsRem -= ExpectedRep
 
         return Seats
+
+    def DebugPrintSeatsA(self):
+        print("State:",self.State,"| D: {0:3}".format(self.SeatsRepA),"R: {0:3}".format(self.SeatsDemA))
+
+    def DebugPrintPercents(self):
+        print("State:",self.State,"| D: {0:2}".format(self.PercentDem),"R: {0:2}".format(self.PercentRep))
         
 def GetRemainder(Val):
     return Val - math.floor(Val)
@@ -132,10 +139,18 @@ def main():
     
     print(Header)
     
+    OverCount =[0,0,0]
     for State in data.keys():
         stateInfo = StateInfo(State, data[State])
-        print(FormatStateInfo(stateInfo))
-        
+        if(Debug):
+            stateInfo.DebugPrintSeatsA()
+            stateInfo.DebugPrintPercents()
+        FormattedInformation = FormatStateInfo(stateInfo)
+        print(FormattedInformation[0])
+        Count = FormattedInformation[1]
+        for i in range(3):
+            OverCount[i] += Count[i]
+    print("OverRepCounts\nDem\t{0:2}\nRep\t{1:2}\n3rd\t{2:2}".format(OverCount[0], OverCount[1], OverCount[2]))
 
         
 def FormatStateInfo(stateInfo):
@@ -158,18 +173,22 @@ def FormatStateInfo(stateInfo):
         overD = "\t"
         overR = "\t"
         over3 = "\t"
+        Count =[0,0,0]
         
         if(stateInfo.SeatsDemA > stateInfo.SeatsDemX):
             overD += "Dem"
+            Count[0] = 1
             
         if(stateInfo.SeatsRepA > stateInfo.SeatsRepX):
             overR += "Rep"
+            Count[1] = 1
             
         if(Include3rd and stateInfo.Seats3rdA > stateInfo.Seats3rdX):
             over3 += "3rd"
+            Count[2] = 1
             
         StateInformation += "{0:3} {1:3} {2:3}".format(overD, overR, over3)
-        return StateInformation
+        return [StateInformation, Count]
     
 if __name__ == "__main__":
     main()
