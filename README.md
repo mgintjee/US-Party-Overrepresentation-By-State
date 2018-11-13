@@ -1,6 +1,6 @@
 # US Party Overrepresentation By State
 
-My friend was telling me how both sides were the same when it came to gerrymandering and it triggered me. But rather than just get emotional with the whole dumb situation i decided to do some research. So i collected the data from the below sources and then used a pretty straight forward algorithm to determine if a party is being overrepresented given the state's party percentages.
+My friend was telling me how both sides were the same when it came to gerrymandering and it triggered me. But rather than just get emotional with the whole dumb situation I decided to do some research. So I collected the data from the below sources and then used a pretty straight forward algorithm to determine if a party is being overrepresented given the state's party percentages.
 
 2 possibles scenarios:
 1) Include 3rd party representation as part of the expected seats (Less Realistic)
@@ -24,4 +24,4 @@ https://news.gallup.com/poll/226643/2017-party-affiliation-state.aspx
 Source For Current Seats For States By Party:
 https://en.wikipedia.org/wiki/List_of_current_members_of_the_United_States_House_of_Representatives
 
-Note: The reason i included the dumb tabs ("\t") is so i could copy and paste it into the sheets with ease. Lazy on my part but w/e
+Note: The reason I included the dumb tabs ("\t") is so I could copy and paste it into the sheets with ease. Lazy on my part but w/e
