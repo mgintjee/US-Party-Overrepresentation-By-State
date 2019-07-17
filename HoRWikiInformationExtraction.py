@@ -41,15 +41,15 @@ def ExtractInfoFromHoRWiki():
         
         for datum in data:
             if (index == TD_DISTRICT_INDEX):
-                state = datum.text
-                stateParts = state.split(" ")
-                state = " ".join(stateParts[:-1])
+                state = datum.text.strip("\n")
+                state = ExtractStateFromDistrict(state)
                 
             elif(index == TD_PARTY_INDEX):
                 party = datum.text.strip("\n")
                 
             index += 1
-            
+        if(state == ""):
+            print(data)
         if (state in dictOfStateInformation.keys()):
             if (party in dictOfStateInformation[state].keys()):
                 dictOfStateInformation[state][party] += 1
@@ -79,6 +79,19 @@ def ExtractRowsFromTable(table):
 def ExtractDataFromRow(row):
     data = row.find_all(TD_TAG)
     return data
+
+def ExtractStateFromDistrict(district):
+    counter = 0
+    for char in district:
+        if( IsNumeric(char)):
+            break
+        else:
+            counter += 1
+    return district[:counter]
+
+def IsNumeric(char):
+    numbers = "0123456789"
+    return (char in numbers)
 
 if __name__ == "__main__":
     main()
