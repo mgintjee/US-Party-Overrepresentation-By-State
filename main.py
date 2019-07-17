@@ -1,6 +1,14 @@
-# US Party Representation By State
-import json, math
-# Whether or not we are including 3rd party as a party to be represented
+##########################################
+## US Party OverRepresentation By State ##
+## Created On: 11.12.18                ##
+## Updated On: 07.17.19                 ##
+##########################################
+
+import urllib.request, json, math
+# Whether or not we are including 3rd party as a party to be represented (If True, it is less realistic)
+GALLUP_POLL_URL = "https://news.gallup.com/poll/226643/2017-party-affiliation-state.aspx"
+WIKI_CURRENT_HOUSE_OF_REPRESENTATIVES_URL = "https://en.wikipedia.org/wiki/List_of_current_members_of_the_United_States_House_of_Representatives"
+
 Include3rd = False
 Debug = False
 
@@ -119,7 +127,7 @@ class StateInfo:
         print("State:",self.State,"| D: {0:2}".format(self.PercentDem),"R: {0:2}".format(self.PercentRep))
         
 
-def main():
+def main_1():
     with open('DataByState.json') as f:
         data = json.load(f)
     
@@ -198,6 +206,21 @@ def ListIntersection(L1, L2):
 
 def GetRemainder(Val):
     return Val - math.floor(Val)
+
+def main():
+    print(GetJsonDataFromUrl(GALLUP_POLL_URL))
+    print("\n\n\n")
+    print(GetJsonDataFromUrl(WIKI_CURRENT_HOUSE_OF_REPRESENTATIVES_URL))
+
+def GetJsonDataFromUrl(url):
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    encoding = response.info().get_content_charset("utf-8")
+    jsonObject = json.loads(data.decode(encoding))
+    if(jsonObject):
+        return jsonObject
+    else:
+        return "Failure To Load Json Data From URL"
 
 if __name__ == "__main__":
     main()
