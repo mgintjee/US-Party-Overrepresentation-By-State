@@ -23,6 +23,8 @@ ELEMENT_TABLE_ID = "votingmembers"
 DEMOCRATIC_KEY = "Democratic"
 REPUBLICAN_KEY = "Republican"
 INDEPENDENT_KEY = "Independent"
+XA0 = u'\xa0'
+AT_LARGE = "at-large"
 
 def main():
     information = ExtractInfoFromHoRWiki()
@@ -47,7 +49,7 @@ def ExtractInfoFromHoRWiki():
             if (index == TD_DISTRICT_INDEX):
                 state = datum.text.strip("\n")
                 state = ExtractStateFromDistrict(state)
-                
+                XA0
             elif(index == TD_PARTY_INDEX):
                 party = datum.text.strip("\n")
                 
@@ -66,23 +68,23 @@ def ExtractInfoFromHoRWiki():
                 dictOfStateInformation[state] = dict()
                 dictOfStateInformation[state][party] = 1
                 
-    for key in dictOfStateInformation.keys():
+    for state in dictOfStateInformation.keys():
         seatsDemocratic = 0
         seatsRepublican = 0
         seatsIndependent = 0
         
-        if(DEMOCRATIC_KEY in dictOfStateInformation[key].keys()):
-            seatsDemocratic = dictOfStateInformation[key][DEMOCRATIC_KEY]
+        if(DEMOCRATIC_KEY in dictOfStateInformation[state].keys()):
+            seatsDemocratic = dictOfStateInformation[state][DEMOCRATIC_KEY]
             
-        if(REPUBLICAN_KEY in dictOfStateInformation[key].keys()):
-            seatsRepublican = dictOfStateInformation[key][REPUBLICAN_KEY]
+        if(REPUBLICAN_KEY in dictOfStateInformation[state].keys()):
+            seatsRepublican = dictOfStateInformation[state][REPUBLICAN_KEY]
             
-        if(INDEPENDENT_KEY in dictOfStateInformation[key].keys()):
-            seatsIndependent = dictOfStateInformation[key][INDEPENDENT_KEY]
+        if(INDEPENDENT_KEY in dictOfStateInformation[state].keys()):
+            seatsIndependent = dictOfStateInformation[state][INDEPENDENT_KEY]
             
-        StateInformation = HoRWikiStateInformation.StateInformation(key, seatsDemocratic, seatsRepublican, seatsIndependent)
-        extractedDictOfStateInformation[key] = StateInformation
-            
+        StateInformation = HoRWikiStateInformation.StateInformation(state, seatsDemocratic, seatsRepublican, seatsIndependent)
+        extractedDictOfStateInformation[state] = StateInformation
+
     return extractedDictOfStateInformation
     
 def ExtractHtmlFromUrl(url):
@@ -109,7 +111,10 @@ def ExtractStateFromDistrict(district):
             break
         else:
             counter += 1
-    return district[:counter]
+    state = district[:counter]
+    state = state.replace(XA0, u'')
+    state = state.replace(AT_LARGE, "")
+    return state
 
 def IsNumeric(char):
     numbers = "0123456789"
