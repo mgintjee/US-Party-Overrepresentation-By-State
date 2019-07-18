@@ -20,13 +20,17 @@ TD_TAG = "td"
 TD_DISTRICT_INDEX = 0
 TD_PARTY_INDEX = 3
 ELEMENT_TABLE_ID = "votingmembers"
+DEMOCRATIC_KEY = "Democratic"
+REPUBLICAN_KEY = "Republican"
+INDEPENDENT_KEY = "Independent"
 
 def main():
     information = ExtractInfoFromHoRWiki()
-    #for info in information:
-    #    print(info.ToString())
+    for key in information.keys():
+        print(information[key].ToString())
 
 def ExtractInfoFromHoRWiki():
+    extractedDictOfStateInformation = dict()
     html = ExtractHtmlFromUrl(HoR_WIKI_URL)
     table = ExtractTableFromHtml(html)
     rows = ExtractRowsFromTable(table)
@@ -48,8 +52,10 @@ def ExtractInfoFromHoRWiki():
                 party = datum.text.strip("\n")
                 
             index += 1
-        if(state == ""):
-            print(data)
+
+        if ( state == ""):
+            continue
+        
         if (state in dictOfStateInformation.keys()):
             if (party in dictOfStateInformation[state].keys()):
                 dictOfStateInformation[state][party] += 1
@@ -61,8 +67,24 @@ def ExtractInfoFromHoRWiki():
                 dictOfStateInformation[state][party] = 1
                 
     for key in dictOfStateInformation.keys():
-        print(key, dictOfStateInformation[key])
-          
+        seatsDemocratic = 0
+        seatsRepublican = 0
+        seatsIndependent = 0
+        
+        if(DEMOCRATIC_KEY in dictOfStateInformation[key].keys()):
+            seatsDemocratic = dictOfStateInformation[key][DEMOCRATIC_KEY]
+            
+        if(REPUBLICAN_KEY in dictOfStateInformation[key].keys()):
+            seatsRepublican = dictOfStateInformation[key][REPUBLICAN_KEY]
+            
+        if(INDEPENDENT_KEY in dictOfStateInformation[key].keys()):
+            seatsIndependent = dictOfStateInformation[key][INDEPENDENT_KEY]
+            
+        StateInformation = HoRWikiStateInformation.StateInformation(key, seatsDemocratic, seatsRepublican, seatsIndependent)
+        extractedDictOfStateInformation[key] = StateInformation
+            
+    return extractedDictOfStateInformation
+    
 def ExtractHtmlFromUrl(url):
     request = requests.get(url)
     html = BeautifulSoup(request.text, "html.parser")

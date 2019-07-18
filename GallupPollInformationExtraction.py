@@ -22,24 +22,20 @@ TD_REPUBLICAN_INDEX = 1
 TD_POPULATION_INDEX = 3
 
 def main():
-    information = ExtractInfoFromGallupPo
-    location = row.find(TH_TAG)
-    return location.textll()
-    for info in information:
-        print(info.ToString())
+    information = ExtractInfoFromGallupPoll()
+    for key in information.keys():
+        print(information[key].ToString())
     
 def ExtractInfoFromGallupPoll():
-    listOfStateInformation = []
+    extractedDictOfStateInformation = dict()
     html = ExtractHtmlFromUrl(GALLUP_POLL_URL)
     tables = ExtractTablesFromHtml(html)
     
-    location = row.find(TH_TAG)
-    return location.text
     for table in tables:
         rows = ExtractRowsFromTable(table)
         
         for row in rows:
-            location = ExtractLocationFromRow(row)
+            state = ExtractLocationFromRow(row)
             data = ExtractDataFromRow(row)
             index = 0
             democratic = -1
@@ -56,10 +52,10 @@ def ExtractInfoFromGallupPoll():
                     
                 index += 1
                 
-            StateInformation = GallupPollStateInformation.StateInformation(location, population, democratic, republican)
-            listOfStateInformation.append(StateInformation)
+            StateInformation = GallupPollStateInformation.StateInformation(state, population, democratic, republican)
+            extractedDictOfStateInformation[state] = StateInformation
             
-    return listOfStateInformation
+    return extractedDictOfStateInformation
 
 def ExtractHtmlFromUrl(url):
     request = requests.get(url)
