@@ -36,15 +36,13 @@ My friend was telling me how both sides were the same when it came to gerrymande
 5. Repeat until remaining seats is 0
 
 ## Outcome 1:
-* Democrats   Overrepresented in **13 states**: CA, CT, IL, MD, MA, MN, NV, NH, NJ, NY, OR, RI, WA
-* Republicans Overrepresented in **30 states**: AL, AZ, AR, CO, FL, GA, IL, IN, IA, KS, KY, LA, MI, MS, MO, NE, NJ, NY, NC, OH, OK, PA, SC, TN, TX, UT, VA, WV, WI, US
-* Both        Overrepresented in  **3 states**: IL, NJ, NY 
+* Democrats   Overrepresented in **12 states**: 
+* Republicans Overrepresented in **20 states**: 
 * [Google Sheets](https://docs.google.com/spreadsheets/d/1e9mlfr3_OIc8v5Oabc0wPBVADV7ZabuXLx_Us7ock8M/edit#gid=1130096001)
 
 ## Outcome 2:
-* Democrats   Overrepresented in **8 states**: CA, CT, MD, MA, NV, NH, OR, RI
-* Republicans Overrepresented in **28 states**: AL, AR, CO, FL, GA, IL, IN, IA, KS, KY, LA, MI, MS, MO, NE, NY, NC, OH, OK, PA, SC, TN, TX, UT, VA, WV, WI, US
-* Both        Overrepresented in  **0 states**: null
+* Democrats   Overrepresented in **17 states**:
+* Republicans Overrepresented in **20 states**:
 * [Google Sheets](https://docs.google.com/spreadsheets/d/1e9mlfr3_OIc8v5Oabc0wPBVADV7ZabuXLx_Us7ock8M/edit#gid=0)
 
 ## Sources
