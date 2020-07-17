@@ -1,6 +1,7 @@
 # US Party Overrepresentation By State
 
-My friend was telling me how both sides were the same when it came to gerrymandering and it triggered me. But rather than just get emotional with the whole dumb situation I decided to do some research. So I collected the data from the below sources and then used a pretty straight forward algorithm to determine if a party is being overrepresented given the state's party percentages.
+My friend was telling me how both sides were the same when it came to gerrymandering and it triggered me since they provided no source. 
+So I collected the data from the below sources and then used a pretty straight forward algorithm to determine if a party is being overrepresented given the state's party percentages.
 
 ## Dependencies
 1. https://www.crummy.com/software/BeautifulSoup/bs4/doc/
