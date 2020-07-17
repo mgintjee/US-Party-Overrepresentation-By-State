@@ -2,6 +2,9 @@
 
 My friend was telling me how both sides were the same when it came to gerrymandering and it triggered me. But rather than just get emotional with the whole dumb situation I decided to do some research. So I collected the data from the below sources and then used a pretty straight forward algorithm to determine if a party is being overrepresented given the state's party percentages.
 
+## Dependencies
+1. https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
 ## 2 possibles scenarios:
 1. Include 3rd party representation as part of the expected seats (Less Realistic)
 2. Exclude 3rd party representation as part of the expected seats (More Realistic)
