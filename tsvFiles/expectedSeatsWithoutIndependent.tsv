@@ -1,0 +1,49 @@
+state	totalSeats	democraticExpectedSeats	democraticActualSeats	democraticRepresentation	republicanExpectedSeats	republicanActualSeats	republicanRepresentation	independentExpectedSeats	independentActualSeats	independentRepresentation
+Connecticut	5	4	5	20.0	1	0	-20.0
+Mississippi	4	1	1	0.0	3	3	0.0
+Illinois	18	11	13	11.11	7	5	-11.11
+Arkansas	4	1	0	-25.0	3	4	25.0
+Vermont	1	1	1	0.0	0	0	0.0
+Oregon	5	3	4	20.0	2	1	-20.0
+Wyoming	1	0	0	0.0	1	1	0.0
+Minnesota	8	5	5	0.0	3	3	0.0
+North Dakota	1	0	0	0.0	1	1	0.0
+Louisiana	6	4	1	-50.0	2	5	50.0
+Iowa	4	3	3	0.0	1	1	0.0
+Nevada	4	3	3	0.0	1	1	0.0
+Arizona	9	4	5	11.11	5	4	-11.11
+West Virginia	3	2	0	-66.67	1	3	66.67
+Washington	10	6	7	10.0	4	3	-10.0
+New Jersey	12	8	10	16.67	4	2	-16.67
+Alabama	7	2	1	-14.29	5	6	14.29
+Florida	27	15	13	-7.41	12	14	7.41
+Massachusetts	9	7	9	22.22	2	0	-22.22
+North Carolina	13	8	3	-38.46	5	10	38.46
+Utah	4	1	1	0.0	3	3	0.0
+Kansas	4	1	1	0.0	3	3	0.0
+Michigan	14	8	7	-7.14	6	6	0.0
+Idaho	2	0	0	0.0	2	2	0.0
+Kentucky	6	4	1	-50.0	2	5	50.0
+Indiana	9	4	2	-22.22	5	7	22.22
+Missouri	8	3	2	-12.5	5	6	12.5
+South Dakota	1	0	0	0.0	1	1	0.0
+Colorado	7	4	4	0.0	3	3	0.0
+Georgia	14	8	5	-21.43	6	9	21.43
+Maine	2	2	2	0.0	0	0	0.0
+New Hampshire	2	2	2	0.0	0	0	0.0
+Montana	1	0	0	0.0	1	1	0.0
+Rhode Island	2	2	2	0.0	0	0	0.0
+Hawaii	2	2	2	0.0	0	0	0.0
+California	53	36	46	18.87	17	7	-18.87
+Alaska	1	0	0	0.0	1	1	0.0
+Maryland	8	6	6	0.0	2	1	-12.5
+Oklahoma	5	2	1	-20.0	3	4	20.0
+Texas	36	17	13	-11.11	19	23	11.11
+Virginia	11	6	7	9.09	5	4	-9.09
+Wisconsin	8	4	3	-12.5	4	5	12.5
+Ohio	16	7	4	-18.75	9	12	18.75
+New Mexico	3	2	3	33.33	1	0	-33.33
+South Carolina	7	3	2	-14.29	4	5	14.29
+Delaware	1	1	1	0.0	0	0	0.0
+New York	27	20	21	3.7	7	5	-7.41
+Tennessee	9	3	2	-11.11	6	7	11.11
